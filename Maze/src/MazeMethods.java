@@ -137,9 +137,9 @@ public class MazeMethods{
 	}
 	
 	public static void GameLoop(Graphics g){
-		MazeMethods.GenBorders(g);
-		MazeMethods.GenPath(g);
-		MazeMethods.GenWalls(g);
+		GenBorders(g);
+		GenPath(g);
+		GenWalls(g);
 		
 		//resets variables
 		x = 5;
@@ -155,6 +155,6 @@ public class MazeMethods{
 		g.setColor(Color.magenta);
 		g.fillRect(VICTORY_X, VICTORY_Y, 5, 5);
 		
-		MazeMethods.Movement(g);
+		Movement(g);
 	}
 }
