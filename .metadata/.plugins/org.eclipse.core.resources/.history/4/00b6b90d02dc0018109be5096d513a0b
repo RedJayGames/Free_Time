@@ -1,0 +1,44 @@
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
+public class MazeMethods {
+	Random rand = new Random();
+	Scanner scan = new Scanner(System.in);
+
+	int x = 5,y = 5;
+	boolean win = false, wall = false, path = false;
+	int wallsX[], wallsY[], pathX[], pathY[], wallsX1[] = null, wallsY1[] = null, pathX1[] = null, pathY1[] = null;
+	wallsX = new int[1444];
+	wallsY = new int[1444];
+	pathX = new int[1444];
+	pathY = new int[1444];
+	
+	public void genPath(Graphics g){
+		//creates path
+		for(int i = 0, determine;!(x == 190 && y == 190);i++){
+			determine = rand.nextInt(14);
+			if(determine < 3 && x >= 10){
+				x-=5;
+			}else if(determine < 6 && y >= 10){
+				y-=5;
+			}else if(determine < 10 && x <= 185){
+				x+=5;
+			}else if(determine >= 10 && y<=185){
+				y+=5;
+			}
+			g.fillRect(x, y, 5, 5);
+			pathX[i] = x;
+			pathY[i] = y;
+
+			//reduces length of array
+			if(x == 190 && y == 190) {
+				pathX1 = Arrays.copyOf(pathX, i);
+				pathY1 = Arrays.copyOf(pathY, i);
+			}
+		}
+	}
+}
+}
