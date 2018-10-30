@@ -136,7 +136,7 @@ public class MazeMethods{
 		}
 	}
 	
-	public static void GameLoop(Graphics g){
+	public void GameLoop(Graphics g){
 		MazeMethods.GenBorders(g);
 		MazeMethods.GenPath(g);
 		MazeMethods.GenWalls(g);

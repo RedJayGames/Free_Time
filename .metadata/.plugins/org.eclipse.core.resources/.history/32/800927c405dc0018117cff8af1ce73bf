@@ -17,7 +17,6 @@ public class MazeMain extends Applet{
 		while(again){
 			setBackground(Color.white);
 			
-			MazeMethods.GameLoop(g);
 			
 			System.out.println("Congratulations! You won!\nWould you like to play again?");
 			question = scan.next();
